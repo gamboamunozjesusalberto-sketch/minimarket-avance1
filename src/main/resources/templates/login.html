@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Minimarket - Iniciar sesión</title>
+</head>
+<body>
+    <h1>Minimarket</h1>
+    <h2>Iniciar sesión</h2>
+
+    <p th:if="${error}" th:text="${error}"></p>
+
+    <form method="post" action="/login">
+        <p>Usuario: <input type="text" name="username" required></p>
+        <p>Clave: <input type="password" name="clave" required></p>
+        <p><button type="submit">Ingresar</button></p>
+    </form>
+</body>
+</html>

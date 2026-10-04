@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Minimarket - Panel</title>
+</head>
+<body>
+    <h1>Panel de <span th:text="${rolPanel}"></span></h1>
+    <p>Bienvenido, <b th:text="${usuario.nombre}"></b>
+       (rol: <span th:text="${usuario.rol}"></span>)</p>
+
+    <ul th:if="${rolPanel == 'ADMIN'}">
+        <li>Gestionar usuarios</li>
+        <li>Gestionar productos</li>
+        <li>Ver todas las ventas</li>
+    </ul>
+
+    <ul th:if="${rolPanel == 'SUPERVISOR'}">
+        <li>Control de inventario</li>
+        <li>Ventas por cajero</li>
+        <li>Reportes</li>
+    </ul>
+
+    <ul th:if="${rolPanel == 'CAJERO'}">
+        <li>Registrar venta</li>
+        <li>Buscar producto por código</li>
+        <li>Emitir comprobante</li>
+    </ul>
+
+    <ul th:if="${rolPanel == 'CLIENTE'}">
+        <li>Ver catálogo de productos</li>
+        <li>Mi historial de compras</li>
+        <li>Mi perfil</li>
+    </ul>
+
+    <p><a href="/logout">Cerrar sesión</a></p>
+</body>
+</html>
